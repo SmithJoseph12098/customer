@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIBA | Complaint and Support</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <img src="img/logo.jpeg" alt="TIBA Logo" class="logo" />
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <section class="intro">
+          <h1>We're Here to Help</h1>
+          <p>
+            Submit your complaint or start a live chat with our support team.
+            Your feedback is important to us.
+          </p>
+        </section>
+
+        <section class="form-section">
+          <h2>Complaint Form</h2>
+          <form
+            id="complaintForm"
+            action="submit_complaint.php"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number (optional):</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+            <div class="form-group">
+              <label for="category">Complaint Category:</label>
+              <select id="category" name="category" required>
+                <option value="billing">Billing</option>
+                <option value="service">Service</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <textarea
+                id="description"
+                name="description"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="attachment">Attachment (optional):</label>
+              <input type="file" id="attachment" name="attachment" />
+            </div>
+            <div class="form-group">
+              <button type="submit">Submit Complaint</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="chat-section">
+          <h2>Live Chat Support</h2>
+          <!-- Live Chat Widget Integration -->
+          <div id="tauwkChatWidget"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>Contact Us: Zelleteam.org@gmail.com| +123 456 7890</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>
+          Follow Us: <a href="#">Facebook</a> | <a href="#">Twitter</a> |
+          <a href="#">LinkedIn</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // tauwk live chat integration script
+      (function () {
+        var script = document.createElement("script");
+        script.src = "https://tauwk.com/widget.js";
+        script.async = true;
+        document.head.appendChild(script);
+      })();
+    </script>
+  </body>
+</html>
